@@ -9,7 +9,7 @@ const Project1 = () => {
   return (
     <div className="card-grid">
       <div className="card">
-        <a href="https://example.com/1" target="_blank" rel="noopener noreferrer">
+        <a href="https://youtu.be/ozungY7g8NI" target="_blank" rel="noopener noreferrer">
           <img src={AlumniImg} alt="Card 1" />
         </a>
         <div className="card-content">
