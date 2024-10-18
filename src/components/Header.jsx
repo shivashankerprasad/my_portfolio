@@ -40,7 +40,7 @@ const Header = () => {
             </li>
             <li className="nav__item">
               <a href="#contact" className="nav__link nav_hover">
-              <i class="bi bi-telephone nav__icon"></i> contact
+              <i className="bi bi-telephone nav__icon"></i> contact
               </a>
             </li>
           </ul>

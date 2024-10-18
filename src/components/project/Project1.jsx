@@ -1,52 +1,46 @@
 import React from 'react';
-import "../../css/project.css";
-import myntracloneImg from "../../assets/myntra.png";
-import ReactBlogImg from "../../assets/reactBlogImg.png";
-import DrumImg from "../../assets/drumImg.png";
-import AlumniImg from "../../assets/alumniIng.png";
+import '../../css/project.css';  // Assuming you have this CSS for styling
+
+// Example image imports (replace with actual paths)
+import projectImg1 from '../../assets/alumniIng.png';
+import projectImg2 from '../../assets/alumniIng.png';
+import projectImg3 from '../../assets/alumniIng.png';
+
+const projects = [
+  {
+    title: "Alumni Connect",
+    description: "A platform to connect alumni and students. Full stack project in progress.",
+    imgSrc: projectImg1,
+    link: "https://youtu.be/ozungY7g8NI"
+  },
+  {
+    title: "Myntra Clone",
+    description: "An e-commerce clone of Myntra built with React and Redux. Backend with JavaScript.",
+    imgSrc: projectImg2,
+    link: "https://tourmaline-yeot-b4b17d.netlify.app/"
+  },
+  {
+    title: "React Blog",
+    description: "A personal blog built using React, deployed on GitHub.",
+    imgSrc: projectImg3,
+    link: "https://shivashankerprasad.github.io/React-Blog-page/"
+  }
+];
 
 const Project1 = () => {
   return (
     <div className="card-grid">
-      <div className="card">
-        <a href="https://youtu.be/ozungY7g8NI" target="_blank" rel="noopener noreferrer">
-          <img src={AlumniImg} alt="Card 1" />
-        </a>
-        <div className="card-content">
-          <h3>Alumni Connect</h3>
-          <p>A platform to connect alumni and students. A full stack project in progress will be live soon. </p>
+      {projects.map((project, index) => (
+        <div className="card" key={index}>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <img src={project.imgSrc} alt={`Project ${index + 1}`} />
+          </a>
+          <div className="card-content">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+          </div>
         </div>
-      </div>
-
-      <div className="card">
-        <a href="https://tourmaline-yeot-b4b17d.netlify.app/" target="_blank" rel="noopener noreferrer">
-          <img src={myntracloneImg} alt="Card 2" />
-        </a>
-        <div className="card-content">
-          <h3>Myntra Clone</h3>
-          <p>An e-commerce clone of Myntra built with React and Redux.JavaScript is used to build the Backend</p>
-        </div>
-      </div>
-
-      <div className="card">
-        <a href="https://shivashankerprasad.github.io/React-Blog-page/" target="_blank" rel="noopener noreferrer">
-          <img src={ReactBlogImg} alt="Card 3" />
-        </a>
-        <div className="card-content">
-          <h3>React Blog</h3>
-          <p>A personal blog built using React. Deployed on to github.</p>
-        </div>
-      </div>
-
-      <div className="card">
-        <a href="https://shivashankerprasad.github.io/drums/" target="_blank" rel="noopener noreferrer">
-          <img src={DrumImg} alt="Card 4" />
-        </a>
-        <div className="card-content">
-          <h3>Drum Kit</h3>
-          <p>Interactive drum kit using JavaScript, Html and css. Deployed on to github.</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
